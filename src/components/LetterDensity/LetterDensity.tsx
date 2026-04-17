@@ -16,7 +16,7 @@ const LetterDensity = ({ text }: LetterDensityProps) => {
             <LetterStat
               key={index}
               letter={char}
-              value={Math.random() * 100}
+              count={Math.floor(Math.random() * 100)}
               totalLetters={chars.length}
             />
           );
