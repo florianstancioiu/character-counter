@@ -5,7 +5,7 @@ export default (text: string, showAllLetters: boolean = false) => {
     .split("")
     .filter((c) => !avoidCharsArr.includes(c));
   const charsLength = text.length;
-  const hashMap: { [key: string]: any } = {};
+  const hashMap: { [key: string]: number } = {};
 
   chars.forEach((char) => {
     if (hashMap[char]) {
