@@ -1,3 +1,5 @@
+import { useState } from "react";
+import letterDensity from "../../utilities/letterDensity";
 import LetterStat from "../LetterStat/LetterStat";
 
 export type LetterDensityProps = {
@@ -5,25 +7,34 @@ export type LetterDensityProps = {
 };
 
 const LetterDensity = ({ text }: LetterDensityProps) => {
-  const chars = text.split(".");
+  const [showAllLetters, setShowAllLetters] = useState(false);
+  const { chars, charsLength, hashMap } = letterDensity(text, showAllLetters);
+  const toggleShowAllLetters = () => setShowAllLetters((val) => !val);
+  const arrowClasses = showAllLetters ? "rotate-90" : "-rotate-90";
 
   return (
     <div>
-      <p>Letter Density</p>
+      <p className="text-neutral-900 font-semibold leading-[130%] tracking-[-1px] text-[24px] mb-5">
+        Letter Density
+      </p>
       <div>
         {chars.map((char, index) => {
           return (
             <LetterStat
               key={index}
               letter={char}
-              count={Math.floor(Math.random() * 100)}
-              totalLetters={chars.length}
+              count={hashMap[char]}
+              totalLetters={charsLength}
             />
           );
         })}
       </div>
-      <p>
-        See more <span>&lt;</span>
+      <p
+        onClick={toggleShowAllLetters}
+        className="text-neutral-900 text-[20px] leading-[140%] tracking-[-0.6px] cursor-pointer"
+      >
+        See {showAllLetters ? "less" : "more"}{" "}
+        <span className={`inline-block ${arrowClasses}`}>&lt;</span>
       </p>
     </div>
   );

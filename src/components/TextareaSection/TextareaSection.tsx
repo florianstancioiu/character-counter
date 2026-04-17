@@ -19,7 +19,9 @@ const TextareaSection = () => {
               type="checkbox"
               className="border rounded-xs border-neutral-900"
             />
-            <label htmlFor={excludeSpacesId}>Exclude Spaces</label>
+            <label htmlFor={excludeSpacesId} className="cursor-pointer">
+              Exclude Spaces
+            </label>
           </div>
           <div className="flex gap-x-2 items-center mb-4 text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
             <input
@@ -27,7 +29,9 @@ const TextareaSection = () => {
               type="checkbox"
               className="border rounded-xs border-neutral-900"
             />
-            <label htmlFor={charLimitId}>Set Character Limit</label>
+            <label htmlFor={charLimitId} className="cursor-pointer">
+              Set Character Limit
+            </label>
           </div>
         </div>
         <p className="text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
