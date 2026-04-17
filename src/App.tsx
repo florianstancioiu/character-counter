@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header";
-import PrimaryInput from "./components/PrimaryInput/PrimaryInput";
+import TextareaSection from "./components/TextareaSection/TextareaSection";
 import Stat from "./components/Stat/Stat";
 import LetterDensity from "./components/LetterDensity/LetterDensity";
 
@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Header />
       <main>
-        <PrimaryInput />
+        <TextareaSection />
         <div>
           <Stat
             title="Total Characters"
