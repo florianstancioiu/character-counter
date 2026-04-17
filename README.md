@@ -127,6 +127,6 @@ Describe how you used AI tools (if any) during this project. This helps demonstr
 
 | Date             | Time Spent | Summary                                   |
 | ---------------- | ---------- | ----------------------------------------- |
-| April 17th, 2026 | 3.5 hours  | I worked on the mobile version of the app |
+| April 17th, 2026 | 4 hours    | I worked on the mobile version of the app |
 
-_Total time spent working on the project:_ **3.5 hours**
+_Total time spent working on the project:_ **4 hours**
