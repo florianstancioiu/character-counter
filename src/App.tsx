@@ -12,14 +12,9 @@ const App = () => {
       <main>
         <TextareaSection />
         <div>
-          <Stat
-            title="Total Characters"
-            value={278}
-            color="blue"
-            bgImage="aaa"
-          />
-          <Stat title="Word Count" value={39} color="yellow" bgImage="aaa" />
-          <Stat title="Sentence Count" value={4} color="red" bgImage="aaa" />
+          <Stat title="Total Characters" value={278} bgColor="bg-purple-400" />
+          <Stat title="Word Count" value={39} bgColor="bg-yellow-500" />
+          <Stat title="Sentence Count" value={4} bgColor="bg-orange-500" />
         </div>
         <LetterDensity text={text} />
       </main>

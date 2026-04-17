@@ -5,7 +5,7 @@ import Sun from "../../assets/svg/icon-sun.svg?react";
 import { useState } from "react";
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, _setDarkMode] = useState(false);
 
   return (
     <header className="mb-10">
