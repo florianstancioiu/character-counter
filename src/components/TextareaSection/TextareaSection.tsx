@@ -1,5 +1,6 @@
 import { useId, useContext } from "react";
 import { CharacterCounterContext } from "../../store/CharacterCounterContext";
+import InfoIcon from "../../assets/svg/icon-info.svg?react";
 
 const TextareaSection = () => {
   const excludeSpacesId = useId();
@@ -10,8 +11,10 @@ const TextareaSection = () => {
     excludeSpaces,
     setExcludeSpaces,
     charsAreLimited,
-    wordCount,
     setCharsAreLimited,
+    charsLimit,
+    setCharsLimit,
+    wordCount,
   } = useContext(CharacterCounterContext);
 
   const minutesSpentReading = Math.ceil(wordCount / 238);
@@ -26,7 +29,15 @@ const TextareaSection = () => {
       ></textarea>
       <div>
         <div>
-          <div className="flex gap-x-2 items-center mb-4 text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
+          {charsAreLimited && charsLimit !== 0 && text.length >= charsLimit && (
+            <p className="text-orange-800 flex items-center gap-x-2 mb-4">
+              <InfoIcon />
+              <span>
+                Limit reached! Your text exceeds {charsLimit} characters.
+              </span>
+            </p>
+          )}
+          <div className="flex gap-x-2 items-center h-7.5 mb-4 text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
             <input
               id={excludeSpacesId}
               type="checkbox"
@@ -41,7 +52,7 @@ const TextareaSection = () => {
               Exclude Spaces
             </label>
           </div>
-          <div className="flex gap-x-2 items-center mb-4 text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
+          <div className="flex gap-x-2 items-center h-7.5 mb-4 text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
             <input
               id={charLimitId}
               type="checkbox"
@@ -52,10 +63,20 @@ const TextareaSection = () => {
             <label htmlFor={charLimitId} className="cursor-pointer select-none">
               Set Character Limit
             </label>
+            {charsAreLimited && (
+              <input
+                className="h-7.5 border border-neutral-600 text-neutral-900 px-3 inline-block py-1 max-w-14 rounded-md"
+                type="text"
+                value={charsLimit}
+                onChange={(event) =>
+                  setCharsLimit(parseInt(event.target.value))
+                }
+              />
+            )}
           </div>
         </div>
         <p className="text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
-          Approx. reading time: {minutesSpentReading !== 0 ? `&lt;` : ""}
+          Approx. reading time: {minutesSpentReading !== 0 ? "<" : ""}
           {minutesSpentReading} minute
           {minutesSpentReading > 1 ? "s" : ""}
         </p>
