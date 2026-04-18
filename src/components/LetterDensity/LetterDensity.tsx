@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import letterDensity from "../../utilities/letterDensity";
 import LetterStat from "../LetterStat/LetterStat";
+import { CharacterCounterContext } from "../../store/CharacterCounterContext";
 
-export type LetterDensityProps = {
-  text: string;
-};
-
-const LetterDensity = ({ text }: LetterDensityProps) => {
+const LetterDensity = () => {
+  const { text } = useContext(CharacterCounterContext);
   const [showAllLetters, setShowAllLetters] = useState(false);
   const { chars, charsLength, hashMap } = letterDensity(text, showAllLetters);
   const toggleShowAllLetters = () => setShowAllLetters((val) => !val);

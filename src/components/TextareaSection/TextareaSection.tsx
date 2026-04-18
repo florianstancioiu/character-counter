@@ -1,14 +1,23 @@
-import { useId } from "react";
+import { useId, useContext } from "react";
+import { CharacterCounterContext } from "../../store/CharacterCounterContext";
 
 const TextareaSection = () => {
   const excludeSpacesId = useId();
   const charLimitId = useId();
-  const text = `Design is the silent ambassador of your brand. Simplicity is key to effective communication, creating clarity in every interaction. A great design transforms complex ideas into elegant solutions, making them easy to understand. It blends aesthetics and functionality seamlessly.`;
+  const {
+    text,
+    setText,
+    excludeSpaces,
+    setExcludeSpaces,
+    charsAreLimited,
+    setCharsAreLimited,
+  } = useContext(CharacterCounterContext);
 
   return (
     <div className="mb-10">
       <textarea
-        defaultValue={text}
+        value={text}
+        onChange={(event) => setText(event.target.value)}
         placeholder="Start typing here… (or paste your text)"
         className="mb-4 pt-2 px-2 border-2 border-neutral-200 bg-neutral-100 w-full resize-none text-neutral-700 h-50 rounded-xl text-[20px] leading-[140%] tracking-[-0.6px] font-normal"
       ></textarea>
@@ -18,9 +27,14 @@ const TextareaSection = () => {
             <input
               id={excludeSpacesId}
               type="checkbox"
+              checked={excludeSpaces}
+              onChange={(event) => setExcludeSpaces(event.target.checked)}
               className="border rounded-xs border-neutral-900"
             />
-            <label htmlFor={excludeSpacesId} className="cursor-pointer">
+            <label
+              htmlFor={excludeSpacesId}
+              className="cursor-pointer select-none"
+            >
               Exclude Spaces
             </label>
           </div>
@@ -28,9 +42,11 @@ const TextareaSection = () => {
             <input
               id={charLimitId}
               type="checkbox"
+              checked={charsAreLimited}
+              onChange={(val) => setCharsAreLimited(val.target.checked)}
               className="border rounded-xs border-neutral-900"
             />
-            <label htmlFor={charLimitId} className="cursor-pointer">
+            <label htmlFor={charLimitId} className="cursor-pointer select-none">
               Set Character Limit
             </label>
           </div>

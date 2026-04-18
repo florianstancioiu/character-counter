@@ -6,6 +6,8 @@ const CharacterCounterContext = createContext({
   setText: (_: string) => {},
   excludeSpaces: false,
   setExcludeSpaces: (_: boolean) => {},
+  charsAreLimited: false,
+  setCharsAreLimited: (_: boolean) => {},
   charsLimit: 0,
   setCharsLimit: (_: number) => {},
   totalCharacters: 0,
@@ -20,6 +22,7 @@ const CharacterCounterContextProvider = ({
 }) => {
   const [text, setText] = useState("");
   const [excludeSpaces, setExcludeSpaces] = useState(false);
+  const [charsAreLimited, setCharsAreLimited] = useState(false);
   const [charsLimit, setCharsLimit] = useState(0);
 
   const { totalCharacters, wordCount, sentenceCount } = stats(
@@ -34,6 +37,8 @@ const CharacterCounterContextProvider = ({
         setText,
         excludeSpaces,
         setExcludeSpaces,
+        charsAreLimited,
+        setCharsAreLimited,
         charsLimit,
         setCharsLimit,
         totalCharacters,
