@@ -6,9 +6,8 @@ import { CharacterCounterContext } from "./store/CharacterCounterContext";
 import { useContext } from "react";
 
 const App = () => {
-  const { totalCharacters, wordCount, sentenceCount } = useContext(
-    CharacterCounterContext,
-  );
+  const { totalCharacters, wordCount, sentenceCount, excludeSpaces } =
+    useContext(CharacterCounterContext);
 
   return (
     <>
@@ -17,7 +16,9 @@ const App = () => {
         <TextareaSection />
         <div>
           <Stat
-            title="Total Characters"
+            title={
+              excludeSpaces ? "Total Characters (no space)" : "Total Characters"
+            }
             value={totalCharacters}
             bgColor="bg-purple-400"
           />
