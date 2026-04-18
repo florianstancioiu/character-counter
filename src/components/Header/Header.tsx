@@ -14,10 +14,10 @@ const Header = () => {
           {!darkMode && <LogoLight />}
           {darkMode && <LogoDark />}
         </div>
-        <div className="w-8 h-8 bg-neutral-100 rounded-md grid place-content-center cursor-pointer">
+        <button className="w-8 h-8 bg-neutral-100 rounded-md grid place-content-center cursor-pointer">
           {!darkMode && <Moon />}
           {darkMode && <Sun />}
-        </div>
+        </button>
       </div>
       <h1 className="text-bold text-[40px] tracking-[-1px] leading-[100%] text-center ">
         Analyze your text in real-time.

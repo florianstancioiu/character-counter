@@ -18,6 +18,8 @@ const TextareaSection = () => {
   } = useContext(CharacterCounterContext);
 
   const minutesSpentReading = Math.ceil(wordCount / 238);
+  const showLimitWarning =
+    charsAreLimited && charsLimit !== 0 && text.length >= charsLimit;
 
   return (
     <div className="mb-10">
@@ -25,11 +27,11 @@ const TextareaSection = () => {
         value={text}
         onChange={(event) => setText(event.target.value)}
         placeholder="Start typing here… (or paste your text)"
-        className="mb-4 pt-2 px-2 border-2 border-neutral-200 bg-neutral-100 w-full resize-none text-neutral-700 h-50 rounded-xl text-[20px] leading-[140%] tracking-[-0.6px] font-normal"
+        className={`mb-4 pt-2 px-2 border-2 ${showLimitWarning ? "border-orange-800" : "border-neutral-200"} bg-neutral-100 w-full resize-none text-neutral-700 h-50 rounded-xl text-[20px] leading-[140%] tracking-[-0.6px] font-normal`}
       ></textarea>
       <div>
         <div>
-          {charsAreLimited && charsLimit !== 0 && text.length >= charsLimit && (
+          {showLimitWarning && (
             <p className="text-orange-800 flex items-center gap-x-2 mb-4">
               <InfoIcon />
               <span>
@@ -69,7 +71,11 @@ const TextareaSection = () => {
                 type="text"
                 value={charsLimit}
                 onChange={(event) =>
-                  setCharsLimit(parseInt(event.target.value))
+                  setCharsLimit(
+                    isNaN(parseInt(event.target.value))
+                      ? 0
+                      : parseInt(event.target.value),
+                  )
                 }
               />
             )}
