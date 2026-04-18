@@ -17,7 +17,7 @@ const Stat = ({ title, value, bgColor }: StatProps) => {
         </p>
         <p
           dangerouslySetInnerHTML={{ __html: title }}
-          className="text-[20px] leading-[140%] tracking-[-0.6px]"
+          className="text-[20px] leading-[140%] tracking-[-0.6px] h-7"
         ></p>
       </div>
       <StatPattern bgColor={bgColor} />
