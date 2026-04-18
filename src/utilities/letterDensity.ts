@@ -1,9 +1,13 @@
 export default (text: string) => {
-  const avoidCharsArr = [" ", ".", ","];
   let chars = text
     .toUpperCase()
     .split("")
-    .filter((c) => !avoidCharsArr.includes(c));
+    // filter out non-alphanumeric characters
+    .filter((char) => {
+      const regex = /[^a-zA-Z\d]/gm;
+
+      return !regex.test(char);
+    });
   const charsLength = text.length;
   const hashMap: { [key: string]: number } = {};
 
