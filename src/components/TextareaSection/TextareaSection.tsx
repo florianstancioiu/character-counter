@@ -10,8 +10,11 @@ const TextareaSection = () => {
     excludeSpaces,
     setExcludeSpaces,
     charsAreLimited,
+    wordCount,
     setCharsAreLimited,
   } = useContext(CharacterCounterContext);
+
+  const minutesSpentReading = Math.ceil(wordCount / 238);
 
   return (
     <div className="mb-10">
@@ -52,7 +55,9 @@ const TextareaSection = () => {
           </div>
         </div>
         <p className="text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
-          Approx. reading time: &lt;1 minute
+          Approx. reading time: {minutesSpentReading !== 0 ? `&lt;` : ""}
+          {minutesSpentReading} minute
+          {minutesSpentReading > 1 ? "s" : ""}
         </p>
       </div>
     </div>

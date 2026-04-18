@@ -1,9 +1,12 @@
 export default (text: string, excludeSpaces: boolean = false) => {
+  const trimmedText = text.trim();
   const totalCharacters = excludeSpaces
-    ? text.replace(" ", "").length
-    : text.length;
-  const wordCount = text.split(" ").length;
-  const sentenceCount = text.split(".").length;
+    ? trimmedText.replace(" ", "").length
+    : trimmedText.length;
+  const wordCount =
+    trimmedText.length === 0 ? 0 : trimmedText.split(" ").length;
+  const sentenceCount =
+    trimmedText.length === 0 ? 0 : trimmedText.split(".").length;
 
   return {
     totalCharacters,
