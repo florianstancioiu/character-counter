@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className="md:max-w-176 md:mx-auto">
+      <main className="md:max-w-176 md:mx-auto lg:max-w-247.5">
         <TextareaSection />
         <div className="md:flex md:justify-between md:gap-x-4">
           <Stat

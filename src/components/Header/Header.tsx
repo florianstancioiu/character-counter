@@ -8,8 +8,8 @@ const Header = () => {
   const [darkMode, _setDarkMode] = useState(false);
 
   return (
-    <header className="mb-10 md:max-w-176 md:mx-auto">
-      <div className="flex justify-between items-center mb-10 h-16">
+    <header className="mb-10 md:max-w-176 md:mx-auto lg:max-w-247.5 lg:mb-12">
+      <div className="flex justify-between items-center mb-10 h-16 lg:mb-12">
         <div className="cursor-pointer">
           {!darkMode && <LogoLight />}
           {darkMode && <LogoDark />}
@@ -19,7 +19,7 @@ const Header = () => {
           {darkMode && <Sun />}
         </button>
       </div>
-      <h1 className="text-bold text-[40px] tracking-[-1px] leading-[100%] text-center ">
+      <h1 className="font-bold text-[40px] tracking-[-1px] leading-[100%] text-center md:text-[64px] md:max-w-127.5 md:mx-auto">
         Analyze your text in real-time.
       </h1>
     </header>
