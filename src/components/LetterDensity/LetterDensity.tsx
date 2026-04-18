@@ -34,7 +34,7 @@ const LetterDensity = () => {
           {chars.length > 5 && (
             <p
               onClick={toggleShowAllLetters}
-              className="text-neutral-900 text-[20px] leading-[140%] tracking-[-0.6px] cursor-pointer"
+              className="text-neutral-900 dark:text-neutral-200 text-[20px] leading-[140%] tracking-[-0.6px] cursor-pointer"
             >
               See {showAllLetters ? "less" : "more"}{" "}
               <span className={`inline-block ${arrowClasses}`}>&lt;</span>
@@ -42,7 +42,9 @@ const LetterDensity = () => {
           )}
         </div>
       ) : (
-        <p>No characters found. Start typing to see letter density.</p>
+        <p className="dark:text-neutral-200">
+          No characters found. Start typing to see letter density.
+        </p>
       )}
     </div>
   );
