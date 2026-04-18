@@ -1,4 +1,4 @@
-export default (text: string, showAllLetters: boolean = false) => {
+export default (text: string) => {
   const avoidCharsArr = [" ", ".", ","];
   let chars = text
     .toUpperCase()
@@ -28,10 +28,6 @@ export default (text: string, showAllLetters: boolean = false) => {
   });
 
   chars = [...new Set(chars)];
-
-  if (!showAllLetters) {
-    chars = chars.slice(0, 5);
-  }
 
   return {
     chars,
