@@ -12,12 +12,14 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="md:max-w-176 md:mx-auto">
         <TextareaSection />
-        <div>
+        <div className="md:flex md:justify-between md:gap-x-4">
           <Stat
             title={
-              excludeSpaces ? "Total Characters (no space)" : "Total Characters"
+              excludeSpaces
+                ? "Total Characters <span class='text-[12px]'>(no space)</span>"
+                : "Total Characters"
             }
             value={totalCharacters}
             bgColor="bg-purple-400"

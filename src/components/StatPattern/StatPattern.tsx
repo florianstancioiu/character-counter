@@ -11,11 +11,11 @@ export type StatPatternProps = {
 const StatPattern = ({ bgColor }: StatPatternProps) => {
   switch (bgColor) {
     case "bg-purple-400":
-      return <TotalCharactersPattern className="relative -right-14" />;
+      return <TotalCharactersPattern className="absolute -right-14" />;
     case "bg-yellow-500":
-      return <WordCountPattern className="relative -right-14" />;
+      return <WordCountPattern className="absolute -right-14" />;
     case "bg-orange-500":
-      return <SentenceCountPattern className="relative -right-14" />;
+      return <SentenceCountPattern className="absolute -right-14" />;
   }
 };
 

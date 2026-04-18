@@ -8,7 +8,7 @@ const Header = () => {
   const [darkMode, _setDarkMode] = useState(false);
 
   return (
-    <header className="mb-10">
+    <header className="mb-10 md:max-w-176 md:mx-auto">
       <div className="flex justify-between items-center mb-10 h-16">
         <div className="cursor-pointer">
           {!darkMode && <LogoLight />}

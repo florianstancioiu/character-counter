@@ -101,6 +101,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Adult Average Reading Speed](https://scholarwithin.com/average-reading-speed?#adult-average-reading-speed) - This helped me calculate the approximate reading time
+- [How to pass HTML tags in props](https://stackoverflow.com/a/46484325/12159189) - This helped me pass a span (HTML) in the Stat component prop
 
 ## Author
 
