@@ -6,7 +6,11 @@ export default (text: string, excludeSpaces: boolean = false) => {
   const wordCount =
     trimmedText.length === 0 ? 0 : trimmedText.split(/\s+/gm).length;
   const sentenceCount =
-    trimmedText.length === 0 ? 0 : trimmedText.split(/\.+/gm).length;
+    trimmedText.length === 0
+      ? 0
+      : trimmedText.match(/[\w|\)][.?!](\s|$)/g) !== null
+        ? trimmedText.match(/[\w|\)][.?!](\s|$)/g)!.length
+        : 0;
 
   return {
     totalCharacters,
