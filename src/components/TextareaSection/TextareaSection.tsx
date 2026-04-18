@@ -9,6 +9,7 @@ const TextareaSection = () => {
     <div className="mb-10">
       <textarea
         defaultValue={text}
+        placeholder="Start typing here… (or paste your text)"
         className="mb-4 pt-2 px-2 border-2 border-neutral-200 bg-neutral-100 w-full resize-none text-neutral-700 h-50 rounded-xl text-[20px] leading-[140%] tracking-[-0.6px] font-normal"
       ></textarea>
       <div>

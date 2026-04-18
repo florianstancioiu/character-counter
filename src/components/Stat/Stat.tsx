@@ -13,7 +13,7 @@ const Stat = ({ title, value, bgColor }: StatProps) => {
     >
       <div>
         <p className="font-bold text-[40px] leading-[100%] tracking-[-1px] mb-2">
-          {value}
+          {value < 9 ? `0${value}` : value}
         </p>
         <p className="text-[20px] leading-[140%] tracking-[-0.6px]">{title}</p>
       </div>

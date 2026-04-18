@@ -17,25 +17,31 @@ const LetterDensity = ({ text }: LetterDensityProps) => {
       <p className="text-neutral-900 font-semibold leading-[130%] tracking-[-1px] text-[24px] mb-5">
         Letter Density
       </p>
-      <div>
-        {chars.map((char, index) => {
-          return (
-            <LetterStat
-              key={index}
-              letter={char}
-              count={hashMap[char]}
-              totalLetters={charsLength}
-            />
-          );
-        })}
-      </div>
-      <p
-        onClick={toggleShowAllLetters}
-        className="text-neutral-900 text-[20px] leading-[140%] tracking-[-0.6px] cursor-pointer"
-      >
-        See {showAllLetters ? "less" : "more"}{" "}
-        <span className={`inline-block ${arrowClasses}`}>&lt;</span>
-      </p>
+      {text.length !== 0 ? (
+        <div>
+          <div>
+            {chars.map((char, index) => {
+              return (
+                <LetterStat
+                  key={index}
+                  letter={char}
+                  count={hashMap[char]}
+                  totalLetters={charsLength}
+                />
+              );
+            })}
+          </div>
+          <p
+            onClick={toggleShowAllLetters}
+            className="text-neutral-900 text-[20px] leading-[140%] tracking-[-0.6px] cursor-pointer"
+          >
+            See {showAllLetters ? "less" : "more"}{" "}
+            <span className={`inline-block ${arrowClasses}`}>&lt;</span>
+          </p>
+        </div>
+      ) : (
+        <p>No characters found. Start typing to see letter density.</p>
+      )}
     </div>
   );
 };
