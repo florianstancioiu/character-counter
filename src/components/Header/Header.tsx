@@ -5,7 +5,7 @@ import Sun from "../../assets/svg/icon-sun.svg?react";
 import { useState } from "react";
 
 const Header = () => {
-  const [darkMode, _setDarkMode] = useState(false);
+  const [darkMode, _setDarkMode] = useState(true);
 
   return (
     <header className="mb-10 md:max-w-176 md:mx-auto lg:max-w-247.5 lg:mb-12">
@@ -14,7 +14,9 @@ const Header = () => {
           {!darkMode && <LogoLight />}
           {darkMode && <LogoDark />}
         </div>
-        <button className="w-8 h-8 bg-neutral-100 rounded-md grid place-content-center cursor-pointer">
+        <button
+          className={`${darkMode ? "bg-neutral-700" : "bg-neutral-100"} w-8 h-8  rounded-md grid place-content-center cursor-pointer`}
+        >
           {!darkMode && <Moon />}
           {darkMode && <Sun />}
         </button>

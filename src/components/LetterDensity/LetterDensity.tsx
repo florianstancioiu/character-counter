@@ -12,7 +12,7 @@ const LetterDensity = () => {
 
   return (
     <div>
-      <p className="text-neutral-900 font-semibold leading-[130%] tracking-[-1px] text-[24px] mb-5">
+      <p className="text-neutral-900 dark:text-neutral-200 font-semibold leading-[130%] tracking-[-1px] text-[24px] mb-5">
         Letter Density
       </p>
       {text.length !== 0 ? (

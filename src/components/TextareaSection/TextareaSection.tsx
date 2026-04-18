@@ -27,11 +27,11 @@ const TextareaSection = () => {
         value={text}
         onChange={(event) => setText(event.target.value)}
         placeholder="Start typing here… (or paste your text)"
-        className={`mb-4 pt-2 px-2 border-2 ${showLimitWarning ? "border-orange-800" : "border-neutral-200"} bg-neutral-100 w-full resize-none text-neutral-700 h-50 rounded-xl text-[20px] leading-[140%] tracking-[-0.6px] font-normal`}
+        className={`mb-4 pt-2 px-2 border-2 ${showLimitWarning ? "border-orange-800 dark:border-orange-500" : "border-neutral-200 dark:border-neutral-700"} bg-neutral-100 dark:bg-neutral-800 w-full resize-none text-neutral-700 dark:text-neutral-200 h-50 rounded-xl text-[20px] leading-[140%] tracking-[-0.6px] font-normal`}
       ></textarea>
       <div>
         {showLimitWarning && (
-          <p className="text-orange-800 flex items-center gap-x-2 mb-4">
+          <p className="text-orange-800 dark:text-orange-500 flex items-center gap-x-2 mb-4">
             <InfoIcon />
             <span>
               Limit reached! Your text exceeds {charsLimit} characters.
@@ -40,7 +40,7 @@ const TextareaSection = () => {
         )}
         <div className="md:flex md:justify-between md:items-center md:w-full">
           <div className="md:flex md:justify-between md:items-center md:gap-x-6">
-            <div className="flex gap-x-2 items-center h-7.5 mb-4 text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px] md:mb-0">
+            <div className="flex gap-x-2 items-center h-7.5 mb-4 text-neutral-900 dark:text-neutral-200 text-[16px] leading-[130%] tracking-[-0.6px] md:mb-0">
               <input
                 id={excludeSpacesId}
                 type="checkbox"
@@ -55,7 +55,7 @@ const TextareaSection = () => {
                 Exclude Spaces
               </label>
             </div>
-            <div className="flex gap-x-2 items-center h-7.5 mb-4 text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px] md:mb-0">
+            <div className="flex gap-x-2 items-center h-7.5 mb-4 text-neutral-900 dark:text-neutral-200 text-[16px] leading-[130%] tracking-[-0.6px] md:mb-0">
               <input
                 id={charLimitId}
                 type="checkbox"
@@ -71,7 +71,7 @@ const TextareaSection = () => {
               </label>
               {charsAreLimited && (
                 <input
-                  className="h-7.5 border border-neutral-600 text-neutral-900 px-3 inline-block py-1 max-w-14 rounded-md"
+                  className="h-7.5 border border-neutral-600 text-neutral-900 dark:text-neutral-200 px-3 inline-block py-1 max-w-14 rounded-md"
                   type="text"
                   value={charsLimit}
                   onChange={(event) =>
@@ -85,7 +85,7 @@ const TextareaSection = () => {
               )}
             </div>
           </div>
-          <p className="text-neutral-900 text-[16px] leading-[130%] tracking-[-0.6px]">
+          <p className="text-neutral-900 dark:text-neutral-200 text-[16px] leading-[130%] tracking-[-0.6px]">
             Approx. reading time: {minutesSpentReading !== 0 ? "<" : ""}
             {minutesSpentReading} minute
             {minutesSpentReading > 1 ? "s" : ""}

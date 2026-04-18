@@ -11,7 +11,7 @@ const LetterStat = ({ letter, count, totalLetters }: LetterStatProps) => {
     Math.round((percentage + Number.EPSILON) * 100) / 100;
 
   return (
-    <div className="flex justify-between items-center mb-3">
+    <div className="flex justify-between items-center mb-3 dark:text-neutral-200">
       <p className="w-8">{letter.toUpperCase()}</p>
       <div className="bg-neutral-100 rounded-2xl h-3 w-full">
         <div
