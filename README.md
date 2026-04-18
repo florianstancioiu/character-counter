@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- URL: [https://florianstancioiu.github.io/character-counter/](https://florianstancioiu.github.io/character-counter/)
+- Frontend Mentor URL: [https://www.frontendmentor.io/solutions/responsive-character-counter-with-react-and-typescript-JtbexAsfAq](https://www.frontendmentor.io/solutions/responsive-character-counter-with-react-and-typescript-JtbexAsfAq)
 
 ## My process
 
@@ -58,7 +58,14 @@ Users should be able to:
 
 ### What I learned
 
+- I learned that `useEffect` shouldn't be used to react to something inside my application
+- I learned that you can use `document.documentElement` to retrieve the `<html></html>` tag in JavaScript
+
 ### Continued development
+
+- I would look over the accessibility of the webpage
+- I would add Storybook
+- I would add unit testing
 
 ### Useful resources
 
