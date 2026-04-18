@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="mb-10">
       <div className="flex justify-between items-center mb-10 h-16">
-        <div>
+        <div className="cursor-pointer">
           {!darkMode && <LogoLight />}
           {darkMode && <LogoDark />}
         </div>
