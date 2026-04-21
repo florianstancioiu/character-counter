@@ -5,8 +5,10 @@ export type LetterStatProps = {
 };
 
 const LetterStat = ({ letter, count, totalLetters }: LetterStatProps) => {
-  const percentage =
+  let percentage =
     (count / totalLetters) * 100 > 100 ? 100 : (count / totalLetters) * 100;
+  percentage = totalLetters === 0 ? 0 : percentage;
+
   const roundedPercentage =
     Math.round((percentage + Number.EPSILON) * 100) / 100;
 

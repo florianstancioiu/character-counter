@@ -8,7 +8,6 @@ export default (text: string) => {
 
       return !regex.test(char);
     });
-  const charsLength = text.length;
   const hashMap: { [key: string]: number } = {};
 
   chars.forEach((char) => {
@@ -35,7 +34,6 @@ export default (text: string) => {
 
   return {
     chars,
-    charsLength,
     hashMap,
   };
 };

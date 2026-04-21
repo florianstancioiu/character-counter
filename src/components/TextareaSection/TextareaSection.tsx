@@ -18,8 +18,11 @@ const TextareaSection = () => {
   } = useContext(CharacterCounterContext);
 
   const minutesSpentReading = Math.ceil(wordCount / 238);
+  const effectiveLength = excludeSpaces
+    ? text.replace(/\s/g, "").length
+    : text.length;
   const showLimitWarning =
-    charsAreLimited && charsLimit !== 0 && text.length >= charsLimit;
+    charsAreLimited && charsLimit > 0 && effectiveLength >= charsLimit;
 
   return (
     <div className="mb-10">

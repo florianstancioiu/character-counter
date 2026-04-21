@@ -6,7 +6,7 @@ import { CharacterCounterContext } from "../../store/CharacterCounterContext";
 const LetterDensity = () => {
   const { text } = useContext(CharacterCounterContext);
   const [showAllLetters, setShowAllLetters] = useState(false);
-  const { chars, charsLength, hashMap } = letterDensity(text);
+  const { chars, hashMap } = letterDensity(text);
   const toggleShowAllLetters = () => setShowAllLetters((val) => !val);
   const arrowClasses = showAllLetters ? "rotate-90" : "-rotate-90";
 
@@ -19,14 +19,14 @@ const LetterDensity = () => {
         <div>
           <div>
             {chars
-              .slice(0, showAllLetters ? charsLength : 5)
+              .slice(0, showAllLetters ? text.length : 5)
               .map((char, index) => {
                 return (
                   <LetterStat
                     key={index}
                     letter={char}
                     count={hashMap[char]}
-                    totalLetters={charsLength}
+                    totalLetters={text.length}
                   />
                 );
               })}
