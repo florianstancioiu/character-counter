@@ -8,20 +8,20 @@ export type StatProps = {
 
 const Stat = ({ title, value, bgColor }: StatProps) => {
   return (
-    <div
+    <section
       className={`relative w-full overflow-hidden flex items-center justify-between h-32.5 mb-4 rounded-xl p-5 pr-0 text-neutral-900 ${bgColor} md:h-37.5`}
     >
       <div className="relative z-1">
         <p className="font-bold text-[40px] leading-[100%] tracking-[-1px] mb-2 md:text-[64px]">
           {value < 9 ? `0${value}` : value}
         </p>
-        <p
+        <h1
           dangerouslySetInnerHTML={{ __html: title }}
           className="text-[20px] leading-[140%] tracking-[-0.6px] h-7"
-        ></p>
+        ></h1>
       </div>
       <StatPattern bgColor={bgColor} />
-    </div>
+    </section>
   );
 };
 

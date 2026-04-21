@@ -11,10 +11,14 @@ const Header = () => {
   return (
     <header className="mb-10 md:max-w-176 md:mx-auto lg:max-w-247.5 lg:mb-12">
       <div className="flex justify-between items-center mb-10 h-16 lg:mb-12">
-        <div className="cursor-pointer">
+        <a
+          href="/"
+          aria-label="Character Counter Home"
+          className="cursor-pointer"
+        >
           {!darkMode && <LogoLight />}
           {darkMode && <LogoDark />}
-        </div>
+        </a>
         <button
           onClick={() => enableDarkMode(!darkMode)}
           className={`${darkMode ? "bg-neutral-700" : "bg-neutral-100"} w-8 h-8  rounded-md grid place-content-center cursor-pointer`}

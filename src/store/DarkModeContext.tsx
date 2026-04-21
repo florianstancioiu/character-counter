@@ -52,14 +52,14 @@ const DarkModeContextProvider = ({
   }, []);
 
   return (
-    <DarkModeContext
+    <DarkModeContext.Provider
       value={{
         darkMode,
         enableDarkMode,
       }}
     >
       {children}
-    </DarkModeContext>
+    </DarkModeContext.Provider>
   );
 };
 

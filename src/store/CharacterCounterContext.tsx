@@ -31,7 +31,7 @@ const CharacterCounterContextProvider = ({
   );
 
   return (
-    <CharacterCounterContext
+    <CharacterCounterContext.Provider
       value={{
         text,
         setText,
@@ -47,7 +47,7 @@ const CharacterCounterContextProvider = ({
       }}
     >
       {children}
-    </CharacterCounterContext>
+    </CharacterCounterContext.Provider>
   );
 };
 
