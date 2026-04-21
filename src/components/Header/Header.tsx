@@ -20,6 +20,8 @@ const Header = () => {
           {darkMode && <LogoDark />}
         </a>
         <button
+          type="button"
+          aria-label="Change the theme of the app."
           onClick={() => enableDarkMode(!darkMode)}
           className={`${darkMode ? "bg-neutral-700" : "bg-neutral-100"} w-8 h-8  rounded-md grid place-content-center cursor-pointer`}
         >
