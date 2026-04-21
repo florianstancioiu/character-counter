@@ -24,7 +24,7 @@ Users should be able to:
 
 - Analyze the character, word, and sentence counts for their text
 - Exclude/Include spaces in their character count
-- ~~Set a character limit~~ (You can set a character limit but it won't do anything but display a warning - I will implement it in the future)
+- Set a character limit
 - Receive a warning message if their text exceeds their character limit
 - See the approximate reading time of their text
 - Analyze the letter density of their text
@@ -58,8 +58,9 @@ Users should be able to:
 
 ### What I learned
 
-- I learned that `useEffect` shouldn't be used to react to something inside my application
+- I learned that `useEffect` shouldn't be used to react to something inside the application
 - I learned that you can use `document.documentElement` to retrieve the `<html></html>` tag in JavaScript
+- I learned that `<button>` should always have a type attribute
 
 ### Continued development
 
@@ -85,9 +86,10 @@ Users should be able to:
 
 ## Daily summaries
 
-| Date             | Time Spent | Summary                                                      |
-| ---------------- | ---------- | ------------------------------------------------------------ |
-| April 17th, 2026 | 4 hours    | I worked on the mobile version of the app                    |
-| April 18th, 2026 | 5 hours    | I worked on the functionality and desktop version of the app |
+| Date             | Time Spent | Summary                                                         |
+| ---------------- | ---------- | --------------------------------------------------------------- |
+| April 17th, 2026 | 4 hours    | I worked on the mobile version of the app                       |
+| April 18th, 2026 | 5 hours    | I worked on the functionality and desktop version of the app    |
+| April 21th, 2026 | 1.5 hours  | I improved the code based on the frontend mentor AI suggestions |
 
-_Total time spent working on the project:_ **9 hours**
+_Total time spent working on the project:_ **10.5 hours**

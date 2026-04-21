@@ -24,11 +24,23 @@ const TextareaSection = () => {
   const showLimitWarning =
     charsAreLimited && charsLimit > 0 && effectiveLength >= charsLimit;
 
+  const onChangeTextHandler = (
+    event: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
+    const textareaValue = event.target.value;
+
+    if (charsAreLimited && charsLimit > 0) {
+      setText(textareaValue.substring(0, charsLimit));
+    } else {
+      setText(textareaValue);
+    }
+  };
+
   return (
     <div className="mb-10">
       <textarea
         value={text}
-        onChange={(event) => setText(event.target.value)}
+        onChange={onChangeTextHandler}
         placeholder="Start typing here… (or paste your text)"
         className={`mb-4 pt-2 px-2 border-2 ${showLimitWarning ? "border-orange-800 dark:border-orange-500" : "border-neutral-200 dark:border-neutral-700"} bg-neutral-100 dark:bg-neutral-800 w-full resize-none text-neutral-700 dark:text-neutral-200 h-50 rounded-xl text-[20px] leading-[140%] tracking-[-0.6px] font-normal`}
       ></textarea>
